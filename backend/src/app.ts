@@ -2,10 +2,17 @@ import express from "express";
 import mongoose from "mongoose";
 import router from "./routes/route";
 import dotenv from "dotenv";
+const cors = require("cors");
 
 dotenv.config();
 
 const app = express();
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 const mongoUri = process.env.MONGODB_URI;
 mongoose

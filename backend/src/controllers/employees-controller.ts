@@ -15,5 +15,5 @@ export async function ListEmployees(req: Request, res: Response) {
 
   const { employees } = await getEmployeesService.execute({ page, query: q });
 
-  return res.status(200).json({ employees });
+  return res.status(200).json(employees);
 }
