@@ -1,7 +1,7 @@
-import EditEmployeePage from "@/components/pages/edit_employee/EditEmployeePage";
+import { EmployeePage } from "@/components/pages/employee";
 
 const Page = ({ params }: { params: { employee_id: string } }) => {
-  return <EditEmployeePage employeeId={params.employee_id} />;
+  return <EmployeePage employeeId={params.employee_id} />;
 };
 
 export default Page;

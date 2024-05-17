@@ -1,19 +1,19 @@
 "use client";
 
-import { Box, Center, Flex, Container, Text } from "@chakra-ui/react";
+import SidebarWithHeader from "@/components/layout/sidebar";
+import { Box, Button, Card, Flex, Heading, Spacer } from "@chakra-ui/react";
 import { EmployeeTables } from "./EmployeesTable";
+import { RiArrowGoBackFill } from "react-icons/ri";
 
 export const EmployeesPage = () => {
   return (
-    <Flex color="white" h="100vh">
-      <Center w="200px" bg="gray.400">
-        <Text>sidebar</Text>
-      </Center>
-      <Box flex="1">
-        <Box paddingTop={40}>
-          <EmployeeTables />
+    <SidebarWithHeader>
+      <Card>
+        <Box p={4}>
+          <Heading>List of employees</Heading>
         </Box>
-      </Box>
-    </Flex>
+        <EmployeeTables />
+      </Card>
+    </SidebarWithHeader>
   );
 };

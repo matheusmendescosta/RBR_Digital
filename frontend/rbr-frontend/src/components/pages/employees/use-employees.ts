@@ -1,11 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-
-type EmployeeDTO = {
-  _id: string;
-  name: string;
-  role: string;
-  department: string;
-};
+import { EmployeeDTO } from "@/dto";
 
 export default function useEmployees() {
   const [employees, setEmployees] = useState<EmployeeDTO[]>([]);
@@ -30,5 +24,5 @@ export default function useEmployees() {
     loadEmployees();
   }, [loadEmployees]);
 
-  return { employees };
+  return { employees, setEmployees };
 }
