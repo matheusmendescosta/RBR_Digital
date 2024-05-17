@@ -10,15 +10,12 @@ const employeeSchema: Schema = new Schema<IEmployee>(
   {
     name: {
       type: String,
-      // required: true,
     },
     role: {
       type: String,
-      // required: true,
     },
     department: {
       type: String,
-      // required: true,
     },
   },
   {

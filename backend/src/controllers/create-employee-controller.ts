@@ -4,9 +4,9 @@ import { Request, Response } from "express";
 import { z } from "zod";
 
 const bodySchema = z.object({
-  name: z.string().min(1, ''),
-  role: z.string().min(1, ''),
-  department: z.string().min(1, ''),
+  name: z.string().min(1, "require"),
+  role: z.string().min(1, "require"),
+  department: z.string().min(1, "require"),
 });
 
 export async function CreateEmployee(req: Request, res: Response) {
@@ -19,7 +19,7 @@ export async function CreateEmployee(req: Request, res: Response) {
 
     return res.status(201).json({ employee });
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 }

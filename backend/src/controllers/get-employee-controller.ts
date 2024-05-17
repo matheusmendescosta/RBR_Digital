@@ -16,7 +16,7 @@ export async function GetEmployees(req: Request, res: Response) {
   try {
     const { employee } = await getEmployeeService.execute({ id });
 
-    return res.status(200).send({ employee });
+    return res.status(200).send(employee);
   } catch (error) {
     if (error instanceof EmployeeNotFoundError) {
       return res.status(404).send({ message: error.message });

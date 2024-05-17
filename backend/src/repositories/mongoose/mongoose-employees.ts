@@ -23,8 +23,15 @@ export class MongooseEmployeesRepository implements EmployeesRepository {
     return createEmployee as IEmployees;
   }
 
-  async find(page: number, query?: string): Promise<IEmployees[]> {
-    const findAllEmployees = await employee.find().limit(10).sort("-createdOn").exec();
+  async find(page: number, query?: any): Promise<IEmployees[]> {
+    const filter = query ? { name: new RegExp(query, "i") } : {};
+
+    const findAllEmployees = await employee
+      .find(filter)
+      .limit(10)
+      .skip((page - 1) * 10)
+      .sort("-createdOn")
+      .exec();
 
     return findAllEmployees;
   }

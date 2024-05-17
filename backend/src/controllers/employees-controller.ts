@@ -9,7 +9,7 @@ const searchBodySchema = z.object({
 });
 
 export async function ListEmployees(req: Request, res: Response) {
-  const { q, page } = searchBodySchema.parse(req.params);
+  const { q, page } = searchBodySchema.parse(req.query);
 
   const getEmployeesService = new GetEmployeesService(new MongooseEmployeesRepository());
 
