@@ -18,8 +18,8 @@ export const EmployeeSection = ({ employeeId }: { employeeId: string }) => {
           <Text>{employee?.role}</Text>
         </GridItem>
         <GridItem colStart={12}>
-          <Text>Role</Text>
-          <Text>{employee?.role}</Text>
+          <Text>Department</Text>
+          <Text>{employee?.department}</Text>
         </GridItem>
       </Grid>
     </Box>
